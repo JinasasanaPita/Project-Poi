@@ -13,26 +13,11 @@ MonoBehaviour:
   m_Name: GameObject Brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_GameObject: {fileID: 1783979763778466, guid: bd1a894f239d58d4dbf63f27e28096bd,
-      type: 3}
-    m_Offset: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
-    m_Orientation: {x: 0, y: 0, z: 0, w: 1}
-  - m_GameObject: {fileID: 1783979763778466, guid: bd1a894f239d58d4dbf63f27e28096bd,
-      type: 3}
-    m_Offset: {x: 1, y: 0, z: 1}
-    m_Scale: {x: 1, y: 1, z: 1}
-    m_Orientation: {x: 0, y: 0.008726535, z: 0, w: 0.9999619}
-  - m_GameObject: {fileID: 1783979763778466, guid: bd1a894f239d58d4dbf63f27e28096bd,
-      type: 3}
-    m_Offset: {x: 1, y: 0, z: 1}
-    m_Scale: {x: 1, y: 1, z: 1}
-    m_Orientation: {x: 0, y: 0, z: 0.008726535, w: 0.9999619}
   - m_GameObject: {fileID: 0}
     m_Offset: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     m_Orientation: {x: 0, y: 0, z: 0, w: 1}
-  m_Size: {x: 2, y: 2, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
   hiddenGridLayout:
