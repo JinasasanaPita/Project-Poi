@@ -3280,6 +3280,7 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     compatible:
     - 1.6.5
     - 1.6.6
@@ -3289,6 +3290,7 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics
@@ -3689,11 +3691,13 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     compatible:
     - 1.4.0
     - 1.4.1
     - 1.4.2
-    verified: 1.4.2
+    - 1.4.3
+    verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
