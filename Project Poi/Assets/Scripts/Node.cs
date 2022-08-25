@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Node
+{
+    public bool isWalkable;
+    public Vector3 worldPosition;
+
+    public Node(bool _isWalkable, Vector3 _worldPos)
+    {
+        isWalkable = _isWalkable;
+        worldPosition = _worldPos;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

@@ -22,10 +22,6 @@ public class Village : MonoBehaviour
     [SerializeField] Button spawnFarmerButton;
     [SerializeField] Button spawnMinerButton;
 
-    [SerializeField] GameObject woodDisplay_GO;
-    [SerializeField] GameObject foodDisplay_GO;
-    [SerializeField] GameObject goldDisplay_GO;
-
     TextMeshProUGUI woodDisplay;
     TextMeshProUGUI foodDisplay;
     TextMeshProUGUI goldDisplay;
@@ -35,16 +31,17 @@ public class Village : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        woodDisplay = woodDisplay_GO.GetComponent<TextMeshProUGUI>();
-        foodDisplay = foodDisplay_GO.GetComponent<TextMeshProUGUI>();
-        goldDisplay = goldDisplay_GO.GetComponent<TextMeshProUGUI>();
+        woodDisplay = GameObject.Find("Wood Display").GetComponent<TextMeshProUGUI>();
+        foodDisplay = GameObject.Find("Food Display").GetComponent<TextMeshProUGUI>();
+        goldDisplay = GameObject.Find("Gold Display").GetComponent<TextMeshProUGUI>();
 
         villageLevel = 1;
 
         villagerCarryCapacity = 10;
         villagerGatherRate = 1;
         v_villagerSpawn = villagerSpawn.position;
-        
+
+        SetUISettings();
 
         spawnWoodCutterButton.onClick.AddListener(SpawnWoodCutter);
         spawnFarmerButton.onClick.AddListener(SpawnFarmer);
@@ -79,6 +76,12 @@ public class Village : MonoBehaviour
         Instantiate(villagerPrefab, v_villagerSpawn, Quaternion.identity);
     }
 
+    public void SetUISettings()
+    {
+        woodDisplay.fontSize = 15;
+        foodDisplay.fontSize = 15;
+        goldDisplay.fontSize = 15;
+    }
     public void DisplayVillageStats()
     {
         woodDisplay.text = "Wood: \n" + wood;

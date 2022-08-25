@@ -11,8 +11,6 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Vector3Int tileCoordinate;
     [SerializeField] private Vector3 highlightWorldPos;
 
-
-
     public bool isInBuildMode = false;
 
     void Start()
@@ -55,13 +53,5 @@ public class GridManager : MonoBehaviour
             tilemap.SetTile(tileCoordinate, null);
             previousTileCoordinate = tileCoordinate;
         }
-    }
-
-    private void SetTreeResourceTiles(GameObject[] treeGameObjects)
-    {
-        //float minX;
-        //float minY;
-        //float maxX;
-        //float maxY;
     }
 }

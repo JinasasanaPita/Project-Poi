@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Suntail Village/Demo/Suntail Village.unity
+- path: Assets/_Scenes/Test_Terrain.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

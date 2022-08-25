@@ -3,7 +3,13 @@ guid: fd7ef64fc8b9b0f4bb86d31f01cbbe2b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - villagerPrefab: {fileID: 1397507006164703778, guid: 9550e39a4afed5c47bb04811388f5570,
+      type: 3}
+  - villagerSpawn: {instanceID: 0}
+  - spawnWoodCutterButton: {instanceID: 0}
+  - spawnFarmerButton: {instanceID: 0}
+  - spawnMinerButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
