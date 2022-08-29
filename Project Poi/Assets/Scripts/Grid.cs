@@ -33,7 +33,7 @@ public class Grid : MonoBehaviour
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) +
                     Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                worldGrid[x, y] = new Node(walkable, worldPoint);
+                worldGrid[x, y] = new Node(walkable, worldPoint, x, y);
             }
     }
 
@@ -49,6 +49,26 @@ public class Grid : MonoBehaviour
         return worldGrid[x, y];
     }
 
+    public List<Node> FindNeighbouringNodes(Node node)
+    {
+        List<Node> neighbours = new List<Node>();
+        for (int x = -1; x <= 1; x++)
+            for (int y = -1; y <= 1; y++)
+            {
+                if (x == 0 && y == 0)
+                    continue;
+                int checkX = node.gridPosX + x;
+                int checkY = node.gridPosY + y;
+
+                // Checking if the neighbouring node is within the bounds of the global grid
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                    neighbours.Add(worldGrid[checkX, checkY]);
+            }
+                
+        return neighbours;
+    }
+
+    public List<Node> path;
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(worldGridSize.x, 1, worldGridSize.y));
@@ -57,6 +77,9 @@ public class Grid : MonoBehaviour
             foreach (Node n in worldGrid)
             {
                 Gizmos.color = (n.isWalkable) ? Color.white : Color.red;
+                if (path != null)
+                    if (path.Contains(n))
+                        Gizmos.color = Color.cyan;
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
             }
         }           

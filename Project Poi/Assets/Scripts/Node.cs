@@ -7,21 +7,24 @@ public class Node
     public bool isWalkable;
     public Vector3 worldPosition;
 
-    public Node(bool _isWalkable, Vector3 _worldPos)
+    public int gCost;
+    public int hCost;
+
+    public int gridPosX;
+    public int gridPosY;
+
+    public Node parent;
+
+    public Node(bool _isWalkable, Vector3 _worldPos, int _gridPosX, int _gridPosY)
     {
         isWalkable = _isWalkable;
         worldPosition = _worldPos;
+        gridPosX = _gridPosX;
+        gridPosY = _gridPosY;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public int fCost
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        get { return gCost + hCost; }
     }
 }

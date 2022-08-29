@@ -26,56 +26,56 @@ public class Villager : MonoBehaviour
     UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        village = gameManager.GetComponent<Village>();
-        f_carryCapacity = village.villagerCarryCapacity;
-        gatherRate = village.villagerGatherRate;
-        villagerState = "goingToResourcePoint";
+    //void Start()
+    //{
+    //    village = gameManager.GetComponent<Village>();
+    //    f_carryCapacity = village.villagerCarryCapacity;
+    //    gatherRate = village.villagerGatherRate;
+    //    villagerState = "goingToResourcePoint";
 
-        SetWaypoints();
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.destination = resourcePoint.position;
-    }
+    //    SetWaypoints();
+    //    agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    //    agent.destination = resourcePoint.position;
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        f_carryCapacity = village.villagerCarryCapacity;
-        gatherRate = village.villagerGatherRate;
-        SetWaypoints();
-        if (villagerState == "goingToResourcePoint")
-        {
-            agent.isStopped = false;
-            SetVillagerGoal();
-            agent.destination = currentWaypoint.position;
-            if (isAtResourcePoint)
-            {
-                Debug.Log("Switching villager state to gatheringResources");
-                villagerState = "gatheringResource";
-            }
-        }
-        else if (villagerState == "gatheringResource")
-        {
-            Debug.Log("Villager is gathering resources");
-            agent.isStopped = true;
-            if (f_currentCarryResources < f_carryCapacity)
-                GatherResources();
-            else
-                villagerState = "goingToCollectionPoint";
-        }
-        else if (villagerState == "goingToCollectionPoint")
-        {
-            agent.isStopped = false;
-            SetVillagerGoal();
-            agent.destination = currentWaypoint.position;
-            if (isAtCollectionPoint)
-            {
-                DropOffResources();
-                villagerState = "goingToResourcePoint";
-            }
-        }
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    f_carryCapacity = village.villagerCarryCapacity;
+    //    gatherRate = village.villagerGatherRate;
+    //    SetWaypoints();
+    //    if (villagerState == "goingToResourcePoint")
+    //    {
+    //        agent.isStopped = false;
+    //        SetVillagerGoal();
+    //        agent.destination = currentWaypoint.position;
+    //        if (isAtResourcePoint)
+    //        {
+    //            Debug.Log("Switching villager state to gatheringResources");
+    //            villagerState = "gatheringResource";
+    //        }
+    //    }
+    //    else if (villagerState == "gatheringResource")
+    //    {
+    //        Debug.Log("Villager is gathering resources");
+    //        agent.isStopped = true;
+    //        if (f_currentCarryResources < f_carryCapacity)
+    //            GatherResources();
+    //        else
+    //            villagerState = "goingToCollectionPoint";
+    //    }
+    //    else if (villagerState == "goingToCollectionPoint")
+    //    {
+    //        agent.isStopped = false;
+    //        SetVillagerGoal();
+    //        agent.destination = currentWaypoint.position;
+    //        if (isAtCollectionPoint)
+    //        {
+    //            DropOffResources();
+    //            villagerState = "goingToResourcePoint";
+    //        }
+    //    }
+    //}
 
     private void SetVillagerGoal()
     {
